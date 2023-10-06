@@ -13,7 +13,14 @@ public class RegisterCustomer{
     private String lastName;
     private String nic;
     private String dob;
-
+    private String email;
+    private String address;
+    private String phoneNumber;
+    private String nicImage;
+    private String customerType;
+    private String organizationName;
+    private String organizationRegNo;
+    private String password;
 
 //    private String username;
 //    private String password;
