@@ -21,4 +21,5 @@ public class CustomerRequestDto{
     private String organizationName;
     private String organizationRegNo;
     private String password;
+    private String contactPersonName;
 }
