@@ -1,0 +1,37 @@
+--DDL
+
+  CREATE TABLE IF NOT EXISTS `customer` (
+  `customer_id` BIGINT,
+  `customer_type` enum('individual','organization'),
+  `address` varchar(150),
+  `phone_number` int,
+  `nic_image` blob,
+  `email` VARCHAR(45) UNIQUE NOT NULL,
+  PRIMARY KEY (`customer_id`)
+);
+
+CREATE TABLE IF NOT EXISTS `individual` (
+  `individual_id` BIGINT,
+  `first_name` varchar(15),
+  `last_name` varchar(15),
+  `nic` varchar(12),
+  `dob` date,
+  PRIMARY KEY (`individual_id`),
+  FOREIGN KEY (`individual_id`) REFERENCES customer(customer_id)
+);
+
+CREATE TABLE IF NOT EXISTS `organization` (
+  `organization_id` BIGINT,
+  `name` varchar(15),
+  `organization_reg_no` varchar(15),
+  PRIMARY KEY (`organization_id`),
+  FOREIGN KEY (`organization_id`) REFERENCES customer(`customer_id`)
+);
+
+CREATE TABLE IF NOT EXISTS `customer_credentials` (
+  `email` VARCHAR(45),
+  `pw_hash` VARCHAR(255),
+  PRIMARY KEY (`email`),
+  FOREIGN KEY (`email`) REFERENCES customer(`email`)
+);
+
