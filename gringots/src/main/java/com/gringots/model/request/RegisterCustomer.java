@@ -7,7 +7,7 @@ import lombok.Setter;
 @JsonIgnoreProperties
 @Getter
 @Setter
-public class RegisterCustomer{
+public class CustomerRequestDto{
 
     private String firstName;
     private String lastName;
