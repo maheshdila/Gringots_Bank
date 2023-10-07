@@ -35,9 +35,11 @@ public class CustomerServiceImpl implements CustomerService{
         String organizationRegNo = customerRequestDto.getOrganizationRegNo();
         String contactPersonName =  customerRequestDto.getContactPersonName();
 
+        customerCreatedResponse = customerDao.createCustomer(customerType,address,phoneNumber,nicImage,email);
+
         //Assuming that customer email & customer Type is checked for null though the front-end
 
-        //Creating customer record
+/*        //Creating customer record
         if(!customerDao.customerAlreadyExist(customerRequestDto.getEmail())){
             customerCreatedResponse = customerDao.createCustomer(customerType,address,phoneNumber,nicImage,email);
 
@@ -64,8 +66,8 @@ public class CustomerServiceImpl implements CustomerService{
             }
         }else {
             return false;
-        }
+        }*/
 
-
+    return customerCreatedResponse.isQuerySuccesful();
     }
 }
