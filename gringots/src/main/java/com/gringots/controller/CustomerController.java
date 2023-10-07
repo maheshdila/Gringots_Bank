@@ -20,9 +20,10 @@ public class CustomerController {
                                  CustomerRequestDto customerRequestDto) throws Exception {
            boolean customerCreated =  customerService.registerCustomer(customerRequestDto);
 
-
-
-
-        return  null;
+           if(customerCreated){
+               return "Customer Created Successful";
+           }else {
+               return "Customer creation Unsuccessful";
+           }
     }
 }
