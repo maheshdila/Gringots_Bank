@@ -35,7 +35,9 @@ public class CustomerServiceImpl implements CustomerService{
         String organizationRegNo = customerRequestDto.getOrganizationRegNo();
         String contactPersonName =  customerRequestDto.getContactPersonName();
 
-        customerCreatedResponse = customerDao.createCustomer(customerType,address,phoneNumber,nicImage,email);
+
+        customerCreatedResponse = customerDao.createCustomer(customerType, address, phoneNumber, nicImage, email);
+
 
         //Assuming that customer email & customer Type is checked for null though the front-end
 
